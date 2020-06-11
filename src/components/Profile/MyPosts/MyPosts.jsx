@@ -13,8 +13,8 @@ const MyPosts = () => {
 
             </div>
             <div className={styles.posts}>
-            <Post />
-            <Post />
+            <Post massage='Hi?How are you?' likes='20'/>
+            <Post massage='Im ,Ok!!' likes='15' />
             <Post />
             <Post />
             <Post />
