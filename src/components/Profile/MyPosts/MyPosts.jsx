@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './Profile.module.css';
+import styles from '../MyPosts.module.css';
 
-const Profile = () => {
+const MyPosts = () => {
     return (
         <div className={styles.content}>
             <div>
@@ -32,4 +32,4 @@ const Profile = () => {
 }
 
 
-export default Profile;
+export default MyPosts;

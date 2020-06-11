@@ -6,3 +6,6 @@
   .item {
     color: brown;
   }
+  .item.active {
+    color : purple;
+  }

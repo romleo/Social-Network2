@@ -8,7 +8,7 @@ const Navbar = () => {
             <div className={styles.item}>
                 <a>Profile</a>
             </div>
-            <div className={styles.item}>
+            <div className={`${styles.item} ${styles.active}`}>
                 <a>Massages</a>
             </div>
             <div className={styles.item}>
