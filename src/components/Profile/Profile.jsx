@@ -6,13 +6,13 @@ const Profile = () => {
     return (
         <div className={styles.content}>
             <div>
-                <img src='https://www.coalindia.in/new_web/images/bg2_tmp.jpg' />
+                <img src='https://www.coalindia.in/new_web/images/bg2_tmp.jpg' alt="background" />
             </div>
             <div>
                 ava+description
         </div>
-            <MyPosts/>
-              
+            <MyPosts />
+
         </div>
     )
 }
