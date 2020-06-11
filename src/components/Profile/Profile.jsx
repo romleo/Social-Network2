@@ -4,13 +4,13 @@ import MyPosts from './MyPosts/MyPosts';
 
 const Profile = () => {
     return (
-        <div className={styles.content}>
+        <div >
             <div>
                 <img src='https://www.coalindia.in/new_web/images/bg2_tmp.jpg' alt="background" />
             </div>
             <div>
                 ava+description
-        </div>
+           </div>
             <MyPosts />
 
         </div>

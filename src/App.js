@@ -9,10 +9,12 @@ import Dialogs from './components/Dialogs/Dialogs';
 const App = () => {
   return (
     <div className='app-wrapper'>
-      <Header/>
-      <Navbar/>
-      {/* <Profile/> */}
-      <Dialogs/>
+      <Header />
+      <Navbar />
+      <div className='app-wraper-content'>
+        <Dialogs />
+      </div>
+        {/* <Profile/> */}
     </div>
   );
 }
