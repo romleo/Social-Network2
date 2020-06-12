@@ -3,10 +3,10 @@
     background-color: cadetblue;
   }
   
-  .item {
-    color: brown;
+  .item a {
+    color: white;
   }
-  .item.active {
-    color : purple;
+  .item a.active {
+    color :gold;
   }
   
