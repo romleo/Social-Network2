@@ -1,8 +1,12 @@
 .dialogs {
     display: grid;
     grid-template-columns: 2fr 10fr;
+    
 }
-
+.img{
+    width: 957px;
+    height: 320px;
+} 
 .dialogsItems {
     padding: 10px;
 
