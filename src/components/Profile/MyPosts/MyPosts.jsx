@@ -3,15 +3,17 @@ import styles from './MyPosts.module.css';
 import Post from './Post/Post';
 
 const MyPosts = () => {
-    let postsData = [
-        {id:1, massage:'Hi?How are you?',likesCount:20},
-        {id:2, massage:'Im,Ok!', likesCount:15}
+    let posts = [
+        { id: 1, massage: 'Hi?How are you?', likesCount: 20 },
+        { id: 2, massage: 'Im,Ok!', likesCount: 15 }
     ]
+
+    let postsElements = posts.map(post => <Post massage={post.massage} likes={post.likesCount} />)
     return (
 
         <div className={styles.postBlock}>
             <h3>My Posts</h3>
-          <div>
+            <div>
                 <div>
                     <textarea></textarea>
                 </div>
@@ -21,11 +23,7 @@ const MyPosts = () => {
 
             </div>
             <div className={styles.posts}>
-                <Post massage={postsData[0].massage} likes={postsData[0].likesCount} />
-                <Post massage={postsData[1].massage} likes={postsData[1].likesCount} />
-                <Post />
-                <Post />
-                <Post />
+                {postsElements}
             </div>
         </div>
 
