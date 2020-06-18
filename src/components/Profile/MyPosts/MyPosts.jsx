@@ -5,7 +5,8 @@ import Post from './Post/Post';
 const MyPosts = () => {
     let posts = [
         { id: 1, massage: 'Hi?How are you?', likesCount: 20 },
-        { id: 2, massage: 'Im,Ok!', likesCount: 15 }
+        { id: 2, massage: 'Im,Ok!', likesCount: 15 },
+        { id: 3, massage: 'Hey,Bro....', likesCount: 1 }
     ]
 
     let postsElements = posts.map(post => <Post massage={post.massage} likes={post.likesCount} />)
@@ -20,7 +21,6 @@ const MyPosts = () => {
                 <div>
                     <button>Add post</button>
                 </div>
-
             </div>
             <div className={styles.posts}>
                 {postsElements}
