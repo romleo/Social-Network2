@@ -3,23 +3,25 @@ import styles from './MyPosts.module.css';
 import Post from './Post/Post';
 
 const MyPosts = (props) => {
-    
+
 
     let postsElements = props.posts.map(post => <Post massage={post.massage} likes={post.likesCount} />)
-    let addPost = ()=> {
-        alert('Hello Friend!!');
-    } 
+    let addPost = () => {
+        let text = newPostElement.current.value;
+        alert (text);
+    }
+    let newPostElement = React.createRef();
     return (
-       
+
 
         <div className={styles.postBlock}>
             <h3>My Posts</h3>
             <div>
                 <div>
-                    <textarea></textarea>
+                    <textarea ref={newPostElement}></textarea>
                 </div>
                 <div>
-                    <button onClick={ addPost } >Add post</button>
+                    <button onClick={addPost} >Add post</button>
                 </div>
             </div>
             <div className={styles.posts}>
