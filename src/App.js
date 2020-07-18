@@ -23,7 +23,7 @@ const App = (props) => {
             render={() => <Profile
               profilePage={props.state.profilePage}
               addPost={props.addPost}
-              updateNewPostText={updateNewPostText}
+              updateNewPostText={props.updateNewPostText}
             />} />
         </div>
       </div>

@@ -1,19 +1,23 @@
 import React from 'react';
 import styles from './MyPosts.module.css';
 import Post from './Post/Post';
+import { updateNewPostText } from '../../../redux/state';
 
 const MyPosts = (props) => {
 
 
     let postsElements = props.posts.map(post => <Post massage={post.massage} likes={post.likesCount} />)
     let addPost = () => {
-        let text = newPostElement.current.value;
-        props.addPost(text);
-        newPostElement.current.value = "  ";
+        // let text = newPostElement.current.value;
+        props.addPost();
+        // props.updateNewPostText('');
+        // newPostElement.current.value = "  ";
     }
     let newPostElement = React.createRef();
-    let onPostChange = () => {
 
+    let onPostChange = () => {
+        let text = newPostElement.current.value;
+        props.updateNewPostText(text);
     }
 
     return (

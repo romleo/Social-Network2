@@ -30,14 +30,15 @@ let state = {
 }
 
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
     let newPost = {
         id: 4,
-        massage: postMessage,
+        massage: state.profilePage.newPostTrext,
         likesCount: 0
     };
 
     state.profilePage.posts.push(newPost);
+    state.profilePage.newPostTrext = '';
     rerenderEntireTree(state);
 }
 export let updateNewPostText = (newText) => {
