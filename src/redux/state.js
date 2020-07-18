@@ -7,7 +7,8 @@ let state = {
             { id: 2, massage: 'Im,Ok!', likesCount: 15 },
             { id: 3, massage: 'Hey,Bro....', likesCount: 1 }
         ],
-        
+        newPostText: 'helloFreand'
+
 
     },
     dialogsPage: {
@@ -29,14 +30,19 @@ let state = {
 }
 
 
- export let addPost = (postMessage) =>{
+export let addPost = (postMessage) => {
     let newPost = {
         id: 4,
         massage: postMessage,
-        likesCount : 0
+        likesCount: 0
     };
 
     state.profilePage.posts.push(newPost);
     rerenderEntireTree(state);
 }
+export let updateNewPostText = (newText) => {
+    state.profilePage.newPostTrext = newText;
+    rerenderEntireTree(state);
+}
+
 export default state;
