@@ -1,4 +1,6 @@
-import { rerenderEntireTree } from "../render";
+let rerenderEntireTree = ()=>{
+    console.log('State changet')
+}
 
 let state = {
     profilePage: {
@@ -30,7 +32,7 @@ let state = {
 }
 
 
-export let addPost = () => {
+export const addPost = () => {
     let newPost = {
         id: 4,
         massage: state.profilePage.newPostTrext,
@@ -39,11 +41,16 @@ export let addPost = () => {
 
     state.profilePage.posts.push(newPost);
     state.profilePage.newPostTrext = '';
+    
     rerenderEntireTree(state);
 }
-export let updateNewPostText = (newText) => {
+export const updateNewPostText = (newText) => {
     state.profilePage.newPostTrext = newText;
     rerenderEntireTree(state);
 }
+export const subscribe=(observer)=>{
+    rerenderEntireTree=observer;      //наш Observer(спостерігач)-це є PATERN (Collback function)
+} 
+
 
 export default state;
