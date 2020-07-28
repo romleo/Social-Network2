@@ -36,21 +36,21 @@ let store = {
     addPost() {
         let newPost = {
             id: 4,
-            massage: state.profilePage.newPostTrext,
+            massage: this._state.profilePage.newPostTrext,
             likesCount: 0
         };
 
-        state.profilePage.posts.push(newPost);
-        state.profilePage.newPostTrext = '';
+        this._state.profilePage.posts.push(newPost);
+        this._state.profilePage.newPostTrext = '';
 
-        rerenderEntireTree(state);
+        this._rerenderEntireTree(this._state);
     },
     updateNewPostText(newText) {
-        state.profilePage.newPostTrext = newText;
-        rerenderEntireTree(state);
+        this._state.profilePage.newPostTrext = newText;
+        this._rerenderEntireTree(this._state);
     },
     subscribe(observer) {
-        rerenderEntireTree = observer;      //наш Observer(спостерігач)-це є PATERN (Collback function)
+        this._rerenderEntireTree = observer;      //наш Observer(спостерігач)-це є PATERN (Collback function)
     },
 
 
