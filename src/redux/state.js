@@ -27,12 +27,17 @@ let store = {
         }
 
     },
-    getState(){
-       return this._state ;
-    },
-    rerenderEntireTree() {
+    _callSubscriber() {
         console.log('State changet')//метод
     },
+
+    getState() {
+        return this._state;
+    },
+    subscribe(observer) {
+        this._rerenderEntireTree = observer;      //наш Observer(спостерігач)-це є PATERN (Collback function)
+    },
+
     addPost() {
         let newPost = {
             id: 4,
@@ -42,26 +47,46 @@ let store = {
 
         this._state.profilePage.posts.push(newPost);
         this._state.profilePage.newPostTrext = '';
-
         this._rerenderEntireTree(this._state);
     },
     updateNewPostText(newText) {
         this._state.profilePage.newPostTrext = newText;
-        this._rerenderEntireTree(this._state);
+        this._callSubscriber(this._state);
     },
-    subscribe(observer) {
-        this._rerenderEntireTree = observer;      //наш Observer(спостерігач)-це є PATERN (Collback function)
-    },
+    dispath(action) {//{type: 'ADD-POST'}
+        if (action.type === 'ADD-POST') {
+            let newPost = {
+                id: 4,
+                massage: this._state.profilePage.newPostTrext,
+                likesCount: 0
+            };
 
+            this._state.profilePage.posts.push(newPost);
+            this._state.profilePage.newPostTrext = '';
+            this._callSubscriber(this._state);
+        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+            this._state.profilePage.newPostTrext = action.newText;
+            this._callSubscriber (this._state);
+        }
+    }
+}
 
+ export const addPostActionCreator = () => {
+    return {
+        type: 'ADD-POST'
+    }
+}
+
+ export const updateNewPostTextActionCreator = (text) => {
+    return {
+        type: 'UPDATE-NEW-POST-TEXT',newText:text
+    }
 }
 
 
 
 
 
-
-
+export default store;
 window.store = store;
 
-export default store;
