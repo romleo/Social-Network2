@@ -27,6 +27,7 @@ let store = {
                 { id: 4, name: 'Oleksiy' },
                 { id: 5, name: 'Yriy' }
             ],
+            newMessageBody:""
         }
 
     },
@@ -56,7 +57,7 @@ let store = {
         this._state.profilePage.newPostTrext = newText;
         this._callSubscriber(this._state);
     },
-    dispath(action) {//{type: 'ADD-POST'}
+    dispatch(action) {//{type: 'ADD-POST'}
         if (action.type === ADD_POST) {
             let newPost = {
                 id: 4,
