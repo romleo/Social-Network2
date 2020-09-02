@@ -34,7 +34,7 @@ let store = {
                 { id: 5, name: 'Yriy' }
             ],
             newMessageBody: ""
-        }
+        },
 
     },
     _callSubscriber() {
