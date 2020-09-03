@@ -9,15 +9,15 @@ import { updateNewMessageBodyCreator, sendMessageCreator } from '../../redux/sto
 const Dialogs = (props) => {
     let state = props.store.getState().dialogsPage;
 
-    let newMessageBody = state.newMessageBody
-        .map(message => <Message message={message.message} />);
+    let newMessageBody = state.newMessageBody;
+        // .map(message => <Message message={message.message} />);
 
 
 
     let dialogsElements = state.dialogs
         .map(dialog => <DialogItem name={dialog.name} id={dialog.id} />);
 
-    let messagesElaments = props.state.messages
+    let messagesElaments = state.messages
         .map(message => <Message message={message.message} />);
 
     let onSendMessageClick = () => {

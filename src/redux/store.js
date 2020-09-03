@@ -15,7 +15,7 @@ let store = {
                 { id: 2, massage: 'Im,Ok!', likesCount: 15 },
                 { id: 3, massage: 'Hey,Bro....', likesCount: 1 }
             ],
-            newPostText: 'helloFreand'
+            newPostText: ''
 
 
         },
@@ -69,29 +69,6 @@ let store = {
         this._state.dialogsPage = dialogsReducer(this._state.dialogsPage,action);
         this._state.sidebarPage = sidebarReducer(this._state.sidebarPage,action);
         this._callSubscriber(this._state);
-
-        // if (action.type === ADD_POST) {
-        //     let newPost = {
-        //         id: 4,
-        //         massage: this._state.profilePage.newPostTrext,
-        //         likesCount: 0
-        //     };
-
-        //     this._state.profilePage.posts.push(newPost);
-        //     this._state.profilePage.newPostTrext = '';
-        //     this._callSubscriber(this._state);
-        // } else if (action.type === UPDATE_NEW_POST_TEXT) {
-        //     this._state.profilePage.newPostTrext = action.newText;
-        //     this._callSubscriber(this._state);
-        // } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-        //     this._state.dialogsPage.newMessageBody = action.body;
-        //     this._callSubscriber(this._state);
-        // } else if (action.type === SEND_MESSAGE) {
-        //     let body = this._state.dialogsPage.newMessageBody;
-        //     this._state.dialogsPage.newMessageBody = '';
-        //     this._state.dialogsPage.messages.push({ id: 5, message: body });
-           
-        // }
     }
 }
 
