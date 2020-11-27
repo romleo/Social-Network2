@@ -6,7 +6,7 @@ import StoreContext from '../../StoreContext';
 
 
 const DialogsContainer = () => {
-    // let state = store.getState().dialogsPage;
+    
     return <StoreContext.Consumer>
         {(store) => {
             let onSendMessageClick = () => {
