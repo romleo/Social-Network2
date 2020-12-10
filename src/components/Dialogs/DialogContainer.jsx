@@ -26,4 +26,13 @@ const DialogsContainer = () => {
 
 }
 
+const SuperDialogsConteiner =  connect(mapStateToProps, mapDispatchToProps)(Dialogs)  
+
+let f1 = () =>{
+    return {}
+}
+let f2 = () =>{
+    return {}
+}
+
 export default DialogsContainer;
