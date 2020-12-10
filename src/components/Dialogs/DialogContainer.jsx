@@ -26,13 +26,22 @@ const DialogsContainer = () => {
 
 }
 
-const SuperDialogsConteiner =  connect(mapStateToProps, mapDispatchToProps)(Dialogs)  
+const SuperDialogsConteiner =  connect(mapStateToProps,mapDispatcToProps)(Dialogs) ; 
 
-let f1 = () =>{
-    return {}
+let mapStateToProps = (state) =>{
+    return {
+        dialogsPage :state.dialogsPage
+    }
 }
-let f2 = () =>{
-    return {}
+let mapDispatcToProps = (state) =>{
+    return {
+        updateNewMessageBody: () => {
+            store.dispatch(sendMessageCreator());
+        } ,
+        sendMessage : () => {
+            store.dispatch(updateNewMessageBodyCreator(body));
+        }
+    }
 }
 
 export default DialogsContainer;
