@@ -19,9 +19,6 @@ let rerenderEntireTree = (state) => {
 }
 
 rerenderEntireTree();
-store.subscribe(() => {
-    
-    rerenderEntireTree(state);
-});
+
 
 serviceWorker.unregister();
