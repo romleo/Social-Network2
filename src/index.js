@@ -8,7 +8,7 @@ import { BrowserRouter } from 'react-router-dom';
 import {Provider} from 'react-redux';
 
 
-let rerenderEntireTree = (state) => {
+
     ReactDOM.render(
         <BrowserRouter>
             <Provider store = {store}>
@@ -16,9 +16,7 @@ let rerenderEntireTree = (state) => {
             </Provider>
         </BrowserRouter>, document.getElementById('root'));
 
-}
 
-rerenderEntireTree();
 
 
 serviceWorker.unregister();
