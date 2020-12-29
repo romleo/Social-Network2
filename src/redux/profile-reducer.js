@@ -38,4 +38,5 @@ const profileReducer = (state = initialState, action) => {
     }
 
 }
-export default profileReducer
+export default profileReduce
+cvxlll,
